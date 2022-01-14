@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  background-color: aliceblue;
+  height: 0 auto;
+}
+/* .btn:hover {
+  background-color: red;
+} */
+#iin,
+#vsao,
+#apgPers,
+#neapMin {
+  width: 100px;
+  height: 23px;
+  margin: 5px;
+  background-color: #e9ecef;
+  text-align: center;
+}
+
+.btn:active {
+  background-color: rgb(73, 70, 70);
+  transition: 0.1s;
+}
+
+.summary {
+  display: none;
+}
+#aprekinat {
+  transition: 0.3s linear;
+  display: block;
+  width: 150px;
+  height: 60px;
+}
+#aprekinat:hover {
+  transform: rotateX(25deg);
+  box-shadow: 0 11px 10px #00a8ff;
+}
