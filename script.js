@@ -7,7 +7,8 @@ var socIemaksa = document.getElementById('vsao');
 var iedzIenNod = document.getElementById('iin');
 var apgadIemaksa = document.getElementById('apgPers');
 var neapliekMIn = document.getElementById('neapMin');
-var vsao, neapMin, sum, iin, procenti23;
+var showSum = document.getElementById('neto');
+var vsao, neapMin, sum, iin, procenti23, procenti20;
 
 button.addEventListener('click', aprekinat);
 
@@ -35,16 +36,14 @@ function aprekinat() {
 		sum = iin + (apgadajamie.value * 50) + neapMin;
 	} else {
 		sum = bruto.value - vsao;
-
 	}
 	//izvada summu
 	document.querySelector('.summary').style.display = 'block';
-	document.getElementById('neto').style.cssText = "color:magenta; font-size:24px; text-decoration: underline";
-	document.getElementById("neto").innerText = parseFloat(sum).toFixed(2) + " EUR";
+	showSum.style.cssText = "color:magenta; font-size:24px; text-decoration: underline";
+	showSum.innerText = parseFloat(sum).toFixed(2) + " EUR";
 	//output vsao
 	socIemaksa.innerText = parseFloat(vsao).toFixed(2);
 	console.log(socIemaksa.value);
-
 	//output iin 
 	if (bruto.value <= 1667) {
 		x = parseFloat(((bruto.value - vsao) - neapliekamais.value) * 0.2 - (apgadajamie.value * 50)).toFixed(2);
@@ -62,14 +61,10 @@ function aprekinat() {
 			iedzIenNod.innerText = 0;
 		}
 	}
-
-
 	//output apgādājamos
 	apgadIemaksa.innerText = apgadajamie.value * 250;
-
 	//output neapliekamo minimumu
 	neapliekMIn.innerText = neapliekamais.value;
-
 }
 $(document).ready(function () {
 	$('#apgadajamie').prop('disabled', true);
